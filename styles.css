@@ -237,6 +237,13 @@ a {
   color: var(--text);
 }
 
+.button.whatsapp,
+.contact-whatsapp,
+.floating-whatsapp {
+  background: linear-gradient(135deg, #2bc866, #119d47);
+  color: #f4fff7;
+}
+
 .button:hover,
 .nav-cta:hover,
 .button:focus-visible,
@@ -504,6 +511,51 @@ a {
   pointer-events: none;
 }
 
+.location-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.location-card,
+.map-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.location-card {
+  padding: 1.8rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+.location-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.8rem;
+}
+
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.map-card {
+  overflow: hidden;
+  min-height: 24rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 24rem;
+  border: 0;
+  filter: saturate(1.05) contrast(1.02);
+}
+
 .contact-card {
   display: flex;
   justify-content: space-between;
@@ -527,8 +579,30 @@ a {
   color: var(--yellow-bright);
 }
 
+.contact-whatsapp {
+  display: inline-flex;
+  justify-content: center;
+  width: fit-content;
+  padding: 0.9rem 1.1rem;
+  border-radius: 999px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 .contact-details p {
   margin: 0;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+  padding: 0.95rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 800;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
 }
 
 .footer {
@@ -556,6 +630,7 @@ a {
   .inventory,
   .service-grid,
   .exchange-layout,
+  .location-layout,
   .contact-card {
     grid-template-columns: 1fr;
   }
@@ -622,5 +697,10 @@ a {
     flex-direction: column;
     align-items: flex-start;
     padding-inline: 1rem;
+  }
+
+  .floating-whatsapp {
+    right: 0.8rem;
+    bottom: 0.8rem;
   }
 }
